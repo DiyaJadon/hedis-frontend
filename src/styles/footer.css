@@ -1,0 +1,47 @@
+/* ================= FOOTER (FIXED PREMIUM) ================= */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  background: rgba(2, 6, 23, 0.9); /* premium dark glass */
+  backdrop-filter: blur(10px);
+
+  color: #94a3b8;
+  text-align: center;
+
+  padding: 14px 20px;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  z-index: 999;
+}
+
+/* subtle premium hover */
+footer:hover {
+  color: #cbd5e1;
+}
+
+/* ================= IMPORTANT FIX ================= */
+/* Prevent content from hiding behind fixed footer */
+
+body {
+  padding-bottom: 60px; /* adjust if footer height changes */
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  footer {
+    font-size: 13px;
+    padding: 12px 16px;
+  }
+
+  body {
+    padding-bottom: 55px;
+  }
+}

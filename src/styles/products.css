@@ -1,0 +1,290 @@
+/* ================= PRODUCTS PAGE ================= */
+
+.products-page {
+  padding: 100px 60px;
+  background: linear-gradient(to bottom, #f8fafc, #eef2ff);
+  text-align: center;
+}
+
+.products-page h1 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.products-page p {
+  font-size: 16px;
+  color: #64748b;
+  margin-bottom: 50px;
+}
+
+/* ================= GRID ================= */
+
+.products-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+/* ================= PRODUCT CARD ================= */
+
+.product-card-horizontal {
+  display: flex;
+  align-items: stretch;
+
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.06);
+
+  transition: all 0.25s ease;
+  text-align: left;
+}
+
+.product-card-horizontal:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.12);
+}
+
+/* ================= IMAGE ================= */
+
+.product-image {
+  width: 280px;
+  min-width: 280px;
+  height: 100%;
+
+  background: linear-gradient(to bottom, #f1f5f9, #e2e8f0);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ✅ keeps image proper */
+  border-radius: 10px;
+}
+
+/* ================= CONTENT ================= */
+
+.product-content {
+  padding: 22px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.product-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+/* Description */
+
+.product-description {
+  font-size: 14.5px;
+  color: #475569;
+  line-height: 1.6;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ================= FOOTER ================= */
+
+.product-footer {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Price */
+
+.price {
+  font-weight: 600;
+  font-size: 14px;
+
+  color: #010713;
+  background: #eff6ff;
+
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+/* Button */
+
+.enquiry-btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+
+  border: none;
+
+  background: #f59e0b;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.enquiry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* ================= STATUS TEXT ================= */
+
+.status-text {
+  text-align: center;
+  font-size: 16px;
+  color: #64748b;
+  margin-top: 40px;
+}
+
+.status-text.error {
+  color: #dc2626;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .products-page {
+    padding: 70px 20px;
+  }
+
+  .product-card-horizontal {
+    flex-direction: column;
+  }
+
+  .product-image {
+    width: 100%;
+    height: 220px;
+  }
+
+  .product-content {
+    padding: 18px;
+  }
+}
+/* ================= MODAL ================= */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-box {
+  width: 420px;
+  background: #0f172a;
+  padding: 30px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-box h2 {
+  font-size: 18px;
+  color: #9ca3af;
+}
+
+.modal-product {
+  color: #fbbf24;
+  margin-bottom: 20px;
+}
+
+/* FORM */
+.modal-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-box input,
+.modal-box textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: #020617;
+  color: white;
+}
+
+.modal-box input:focus,
+.modal-box textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+/* BUTTONS */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.modal-buttons button {
+  flex: 1;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.modal-buttons button:first-child {
+  background: #fbbf24  ;
+  color: white;
+}
+
+.modal-buttons button:first-child:hover {
+  background: #fbbf24;
+}
+
+.close-btn {
+  background: transparent;
+  border: 1px solid #6b7280;
+  color: #9ca3af;
+}
+
+.close-btn:hover {
+  color: white;
+  border-color: white;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

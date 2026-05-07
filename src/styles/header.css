@@ -1,0 +1,162 @@
+/* ================= HEADER ================= */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 60px;
+
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+
+  border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+
+  z-index: 1000;
+}
+
+/* ================= LOGO ================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 70px;
+}
+
+.company-name h1 {
+  font-size: 35px;
+  font-weight: 650;
+  margin: 0;
+}
+
+.company-name p {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ================= NAV ================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* ✅ ALL NAV ITEMS (Home, Products, Contact) */
+.nav-link,
+.dropdown-trigger,
+.nav-links a {
+  font-size: 15px;
+  font-weight: 600;
+  color: #374151;
+
+  cursor: pointer;
+  padding: 10px 8px;
+
+  text-decoration: none;
+  transition: all 0.25s ease;
+
+  position: relative; /* ✅ required for underline */
+}
+
+/* ✅ HOVER COLOR */
+.nav-link:hover,
+.dropdown-trigger:hover,
+.nav-links a:hover {
+  color: #f59e0b;
+}
+
+/* ✅ UNDERLINE EFFECT */
+.nav-link::after,
+.dropdown-trigger::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 0%;
+  height: 2px;
+  background-color: #f59e0b;
+
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.dropdown-trigger:hover::after {
+  width: 100%;
+}
+
+/* ================= DROPDOWN ================= */
+
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Dropdown box */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 260px;
+
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+
+  display: none;
+  flex-direction: column;
+
+  z-index: 9999;
+}
+
+/* Show dropdown */
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+/* Dropdown items */
+.dropdown-content a {
+  padding: 14px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f3f4f6;
+  color: #f59e0b;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 16px 20px;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .logo img {
+    width: 40px;
+  }
+}
